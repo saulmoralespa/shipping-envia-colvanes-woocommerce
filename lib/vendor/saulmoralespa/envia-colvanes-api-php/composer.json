@@ -1,0 +1,31 @@
+{
+    "name": "saulmoralespa/envia-colvanes-api-php",
+    "description": "Envia colvanes API PHP SDK",
+    "keywords": [
+        "envia", "colvanes", "envia-colvanes-api",
+        "php-envia", "api", "integration"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Saul Morales Pacheco",
+            "email": "info@saulmoralespa.com",
+            "homepage": "http://saulmoralespa.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "require": {
+		"php": ">=7.1",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*",
+        "vlucas/phpdotenv": "^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "EnviaColvanes\\": "src/"
+        }
+    }
+}
