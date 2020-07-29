@@ -3,6 +3,31 @@
 
 class WC_Shipping_Method_Envia_Colvanes_EC extends WC_Shipping_Method
 {
+    /**
+     * @var mixed
+     */
+    public $debug;
+    /**
+     * @var mixed
+     */
+    public $city_sender;
+    /**
+     * @var mixed
+     */
+    public $payment_method;
+    /**
+     * @var bool
+     */
+    public $isTest;
+    /**
+     * @var mixed
+     */
+    public $user;
+    /**
+     * @var mixed
+     */
+    public $password;
+
     public function __construct($instance_id = 0)
     {
         parent::__construct($instance_id);
@@ -99,6 +124,7 @@ class WC_Shipping_Method_Envia_Colvanes_EC extends WC_Shipping_Method
         if (empty($data))
             return apply_filters( 'woocommerce_shipping_' . $this->id . '_is_available', false, $package, $this );
 
+        if ($this->debug === 'yes')
         shipping_envia_colvanes_ec()->log($data);
 
         $rate = array(
@@ -117,7 +143,7 @@ class WC_Shipping_Method_Envia_Colvanes_EC extends WC_Shipping_Method
         global $woocommerce;
         $country = $package['destination']['country'];
         $state_destination = $package['destination']['state'];
-        $city_destination  = $package['destination']['city'];
+        $city_destination  = Shipping_Envia_Colvanes_EC::get_city($package);
         $items = $woocommerce->cart->get_cart();
         $cart_prods = [];
         $total_weight = 0;

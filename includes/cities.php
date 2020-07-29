@@ -535,6 +535,7 @@ return apply_filters('envia_colvanes_cities', array(
     "25086" => "Beltrán - Cundinamarca",
     "25095" => "Bituima - Cundinamarca",
     "25099" => "Bojacá - Cundinamarca",
+    "11001" => "Bogota - Cundinamarca",
     "25120" => "Cabrera - Cundinamarca",
     "25123" => "Cachipay - Cundinamarca",
     "25126" => "Cajicá - Cundinamarca",

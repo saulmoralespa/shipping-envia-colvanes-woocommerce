@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Shipping Envia Colvanes Woocommerce
+ * Plugin Name: Shipping Envia Colvanes Woo
  * Description: hipping Envia Colvanes Woocommerce is available for Colombia
  * Version: 1.0.0
  * Author: Saul Morales Pacheco
@@ -109,24 +109,6 @@ function shipping_envia_colvanes_ec_requirements(){
         }
         return false;
     }
-
-    /*$wc_main_settings = get_option('woocommerce_servientrega_shipping_settings');
-    $license = $wc_main_settings['servientrega_license'] ?? '';
-
-    if(empty($license)){
-        if ( is_admin() && ! defined( 'DOING_AJAX' ) ) {
-            add_action(
-                'admin_notices',
-                function() {
-                    $plugin_license = 'Shipping Servientrega Woocommerce requiere una licencia para poder generar guías entre otras funciones: '  .
-                        sprintf(
-                            '%s',
-                            "<a class='button button-primary' target='_blank' href='https://shop.saulmoralespa.com/producto/plugin-shipping-servientrega-woocommerce/'>Obtener licencia</a>" );
-                    shipping_servientrega_wc_ss_notices( $plugin_license );
-                }
-            );
-        }
-    }*/
 
     return true;
 }

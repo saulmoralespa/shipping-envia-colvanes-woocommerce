@@ -81,13 +81,15 @@ class Shipping_Envia_Colvanes_Plugin_EC
 
         add_filter( 'plugin_action_links_' . plugin_basename( $this->file), array( $this, 'plugin_action_links' ) );
         add_filter( 'woocommerce_shipping_methods', array( $this, 'shipping_envia_colvanes_ec_add_method') );
+
+        add_action( 'woocommerce_order_status_changed', array('Shipping_Envia_Colvanes_EC', 'generate_guide_dispath'), 20, 4 );
     }
 
     public function plugin_action_links($links)
     {
         $plugin_links = array();
         $plugin_links[] = '<a href="' . admin_url( 'admin.php?page=wc-settings&tab=shipping&section=shipping_envia_colvanes_ec') . '">' . 'Configuraciones' . '</a>';
-        $plugin_links[] = '<a target="_blank" href="https://shop.saulmoralespa.com/shipping-envia-colvanes-woocommerce/">' . 'Documentación' . '</a>';
+        $plugin_links[] = '<a target="_blank" href="https://shop.saulmoralespa.com/shipping-envia-colvanes-woo/">' . 'Documentación' . '</a>';
         return array_merge( $plugin_links, $links );
     }
 

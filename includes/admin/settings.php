@@ -21,7 +21,7 @@ wc_enqueue_js( "
 });	
 ");
 
-$docs_url = '<a target="_blank" href="https://shop.saulmoralespa.com/shipping-envia-colvanes-woocommerce/">' . __( 'Ver documentación completa del plugin') . '</a>';
+$docs_url = '<a target="_blank" href="https://shop.saulmoralespa.com/shipping-envia-colvanes-woo/">' . __( 'Ver documentación completa del plugin') . '</a>';
 $docs = array(
     'docs'  => array(
         'title' => __( 'Documentación' ),

@@ -76,7 +76,7 @@ class Shipping_Envia_Colvanes_EC extends WC_Shipping_Method_Envia_Colvanes_EC
 
     public static function clean_city($city)
     {
-        Return $city == 'Bogota D.C' ? 'Bogota' : $city;
+        return $city === 'Bogota D.C' ? 'Bogota' : $city;
     }
 
     public static function clean_string($string)
@@ -87,6 +87,15 @@ class Shipping_Envia_Colvanes_EC extends WC_Shipping_Method_Envia_Colvanes_EC
             "U","n");
         $text = str_replace($not_permitted, $permitted, $string);
         return $text;
+    }
+
+    public static function get_city( array $package = [])
+    {
+        $city_destination  = $package['destination']['city'];
+        $city_destination = self::clean_string($city_destination);
+        $city_destination = self::clean_city($city_destination);
+
+        return $city_destination;
     }
 
     public static  function name_destination($country, $state_destination)
@@ -126,5 +135,10 @@ class Shipping_Envia_Colvanes_EC extends WC_Shipping_Method_Envia_Colvanes_EC
         }
 
         return $res;
+    }
+
+    public static function generate_guide_dispath($order_id, $old_status, $new_status, WC_Order $order)
+    {
+
     }
 }
